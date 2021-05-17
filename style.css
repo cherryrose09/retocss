@@ -1,0 +1,206 @@
+body{
+	background: #33FF9F;
+	animation-name: fondo;
+	position: relative;
+	animation-duration: 6s;
+	 animation-delay: 1s;
+
+}
+
+@keyframes fondo{
+ 0%{transform: rotate(0deg) scaley (0);}
+  100%{transform: rotate(360deg) scaley (1);}
+}   
+
+#cuadrado{
+   width: 200px;
+   height: 200px;
+   background: #e5cbce;
+   animation-name: mianimacion;
+   animation-duration: 5s;
+   animation-delay: 1s;
+   position: relative;
+   animation-timing-function: ease;
+   animation-iteration-count: infinite;
+   
+
+}
+
+@keyframes mianimacion{
+	0% {background: #e5cbce;left: 0; top: 0px;}
+	25% {background: #f8f0c6; left:300px; top: 0px;}
+	50% {background: #f7d1c6; left: 300px; top:300px}
+	75% {background: #aaa; left:0px; top:300px;}
+	100% {background: #fbc398; left:0px; top: 0px }
+}   
+
+
+#triangulo{
+	width:0;
+	height: 0;
+	margin:auto;
+	border-right: 50px solid transparent; 
+	border-left: 50px solid transparent;
+	border-bottom: 100px solid #fff;
+	animation-name: mianimaciont;
+    position: relative;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-duration: 5s;
+    animation-delay: 1s;
+
+}
+
+
+@keyframes mianimaciont{
+	0% {left: 0; top: 0px;}
+	25% {left:300px; top: 0px;}
+	50% {left: 300px; top:300px}
+	75% {left:0px; top:300px; transform: rotate(280deg);}
+	100% {left:0px; top: 0px }
+}  
+
+
+
+#container{
+			perspective:800px;
+			margin: 200px auto;
+			width: 400px;
+		}
+		#cubo{
+			transform-style: preserve-3d;
+			width: 200px;
+			height: 200px;
+			transform: rotateY(45deg);
+			animation:giro 15s linear infinite;
+			padding-top: 40%;
+
+		}
+
+		@keyframes giro{
+			0% { transform: translateZ(-150px) translateX(-75%) rotateY(0deg); }
+            50% { transform: translateZ(-150px) translateX(75%) rotateY(180deg); }
+            100% { transform: translateZ(-150px) translateX(-75%) rotateY(360deg); }
+		}
+		.cara{
+			position: absolute;
+			height: 200px;
+			width: 200px;
+		}
+		.enfrente{
+			background-color: rgba(95,27,188,0.5);
+			transform: translateZ(100px);
+		}
+		.atras{
+			background-color: rgba(95,242,81,0.5);
+			transform: translateZ(-100px);
+				
+		}
+		.arriba{
+			background-color: rgba(95,188,27,0.5);
+            transform: translateY(-100px) rotateX(90deg)		
+		}
+		.abajo{
+			background-color: rgba(95,81,244,0.5);
+			transform: translateY(100px) rotateX(90deg);	
+		
+		}
+		.izquierda{
+			background-color: rgba(201,54,122,0.5);
+			transform: translateX(-100px) rotateY(90deg);
+		
+		}
+		.derecha{
+			background-color: rgba(196,201,54,0.5);
+		    transform: translateX(100px) rotateY(90deg);
+		}
+
+.contenedor{
+	height: 300px;
+	width: 300px;
+	perspective: 1000px;
+	margin: auto;
+}
+
+.box{
+	height: 100%;
+	width: 100%;
+	transform-style: preserve-3d;
+	transform: rotateY(180deg);
+	animation:giro 15s linear infinite;
+}
+
+@keyframes giro{
+			0% { transform: translateZ(-150px) translateX(-75%) rotateY(0deg); }
+            50% { transform: translateZ(-150px) translateX(75%) rotateY(180deg); }
+            100% { transform: translateZ(-150px) translateX(-75%) rotateY(360deg); }
+		}
+
+.elementos{
+
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	transform-style: preserve-3d;
+	position: absolute;
+
+}
+:root{
+	--transladacion:translateZ(150px);
+}
+
+.elementos:nth-child(1){
+	transform: rotateY(0deg) var(--transladacion);
+
+}
+.elementos:nth-child(2){
+	transform: rotateY(180deg) var(--transladacion);
+
+}
+
+.elementos:nth-child(3){
+	transform: rotateY(90deg) var(--transladacion);
+
+}
+
+.elementos:nth-child(4){
+	transform: rotateY(-90deg) var(--transladacion);
+
+}
+
+.elementos:nth-child(5){
+	transform: rotateX(-90deg); var(--transladacion);
+
+}
+.elementos:nth-child(6){
+	transform: rotateX(90deg) translateZ(-200px);
+	background-color: #111;
+	opacity: 0.1;
+
+}
+.item{
+    height: 100%;
+	width: 100%;
+	transform-origin: bottom;
+	background-color: #c997c6;
+	clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+	transform: rotateX(30deg);
+	object-fit: cover;
+	transition: 2s;
+	animation-name: piramide 15s linear;
+
+}
+
+
+    .contenedor:hover .item{
+	transform: rotateX(-80deg);
+}
+
+
+
+
+
+
+
+
+ 
